@@ -118,7 +118,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 		# if typestring and types and typestring not in types:
 		# 	types.append(typestring)
 		alts = []
-		if unicodes and unicodes[0] and unicodes[0] not in uniqunicodes:
+		if unicodes and unicodes[0] and unicodes[0] not in uniqunicodes and signtypes[featuresign] not in types:
 			uniqunicodes.append(unicodes[0])
 			tp = None
 			if len(unicodes) == 1:
@@ -132,6 +132,22 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'display_unicode': unicodes[0],
 				'types': tp,
 				'description': CharDesc.getCharacterDescription(unicodes[0])
+			}
+			resultunicodes.append(item)
+		elif unicodes and unicodes[0] and unicodes[0] not in uniqunicodes and signtypes[featuresign] in types:
+			uniqunicodes.append(unicodes[0])
+			tp = None
+			if len(unicodes) == 1:
+				tp = types.copy()
+				if typestring and typestring not in tp:
+					tp.append(typestring)
+			item = {
+				'id': getUniqName(),
+				'sign': chr(int(unicodes[0], 16)),
+				'unicode': unicodes[0],
+				'display_unicode': '',
+				'types': tp,
+				'description': 'local form' # CharDesc.getCharacterDescription(unicodes[0])
 			}
 			resultunicodes.append(item)
 		# else:
