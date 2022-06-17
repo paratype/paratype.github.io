@@ -193,11 +193,6 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 						'description': CharDesc.getCharacterDescription(_unicodes[0])
 					}
 					resultunicodes.append(item)
-					# print('l3', name_eng, sign, unicodes)
-					# print (item)
-				# for uni in _unicodes:
-				# 	if uni not in uniqunicodes:
-				# 		uniqunicodes.append(uni)
 			else:
 				break
 		if signtypes[alternatesign] not in types and signtypes[equivalentsign] not in types:# and signtypes['&'] not in types:
