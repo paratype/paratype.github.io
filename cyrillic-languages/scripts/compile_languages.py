@@ -147,7 +147,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'unicode': unicodes[0],
 				'display_unicode': '',
 				'types': tp,
-				'description': 'local form' # CharDesc.getCharacterDescription(unicodes[0])
+				'description': 'Local form of %s' % CharDesc.getCharacterDescription(unicodes[0])
 			}
 			resultunicodes.append(item)
 		# else:
