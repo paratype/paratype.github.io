@@ -183,8 +183,8 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					'sign': nextitem['sign'],
 					'unicodes': _unicodes,
 					'types': nexttypes, #nextitem['types'],
+					'description': ', '.join(_unicodes),
 					'alts': [],
-					'description': ', '.join(_unicodes)
 				})
 				if _unicodes and _unicodes[0] and _unicodes[0] not in uniqunicodes:
 					uniqunicodes.append(_unicodes[0])
@@ -238,14 +238,15 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 		if signtypes[alternatesign] not in types and signtypes[equivalentsign] not in types:# and signtypes['&'] not in types:
 			description = ', '.join(unicodes)
 			if signtypes[featuresign] in types:
-				description = ''
+				if alts and alts[0]['unicodes'] == unicodes:
+					description = 'Local form of #%s' % ', '.join(alts[0]['unicodes'])
 			chars_list_wrap.append({
 				'id': getUniqName(),
 				'sign': sign,
 				'unicodes': unicodes,
 				'types': types,
+				'description': description,
 				'alts': alts,
-				'description': description
 			})
 
 	return (chars_list_wrap, resultunicodes, uniqunicodes)
