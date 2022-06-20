@@ -90,6 +90,7 @@ def getUniqName(cut=32):
 def getCharInfo(item, typestring = None):
 	types = []
 	unicodes = []
+	overrideunicode = False
 	for mark in marks:
 		if typestring and typestring not in types:
 			types.append(typestring)
@@ -99,6 +100,7 @@ def getCharInfo(item, typestring = None):
 	if '!' in item:
 		unicodes = item.split('!')[1:]
 		item = ''
+		overrideunicode = True
 		for uni in unicodes:
 			item += chr(int(uni,16))
 	else:
@@ -108,7 +110,8 @@ def getCharInfo(item, typestring = None):
 	return {
 		'sign': item,
 		'unicodes': unicodes,
-		'types': types
+		'types': types,
+		'overuni': overrideunicode
 	}
 
 def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None, name_eng = None):
@@ -124,6 +127,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 		sign = item['sign']
 		unicodes = item['unicodes']
 		types = item['types']
+		orrideunicode = item['overuni']
 		# if typestring and types and typestring not in types:
 		# 	types.append(typestring)
 		alts = []
@@ -150,11 +154,14 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				tp = types.copy()
 				if typestring and typestring not in tp:
 					tp.append(typestring)
+			display_unicode = ''
+			if orrideunicode:
+				display_unicode = unicodes[0]
 			item = {
 				'id': getUniqName(),
 				'sign': chr(int(unicodes[0], 16)),
 				'unicode': unicodes[0],
-				'display_unicode': unicodes[0],
+				'display_unicode': display_unicode,
 				'types': tp,
 				'description': CharDesc.getCharacterDescription(unicodes[0])
 			}
