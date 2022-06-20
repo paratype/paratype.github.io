@@ -236,13 +236,16 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 			else:
 				break
 		if signtypes[alternatesign] not in types and signtypes[equivalentsign] not in types:# and signtypes['&'] not in types:
+			description = ', '.join(unicodes)
+			if signtypes[featuresign] in types:
+				description = ''
 			chars_list_wrap.append({
 				'id': getUniqName(),
 				'sign': sign,
 				'unicodes': unicodes,
 				'types': types,
 				'alts': alts,
-				'description': ', '.join(unicodes)
+				'description': description
 			})
 
 	return (chars_list_wrap, resultunicodes, uniqunicodes)
