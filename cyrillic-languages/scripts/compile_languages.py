@@ -38,13 +38,16 @@ class CharacherDescription(object):
 		'\t': '',
 		'\"': '\''
 	}
-	def __init__(self, unicodelibfile):
+	def __init__(self):
+		self.stuct = {}
+
+
+	def loadUnicodeDescriptionsFile(self, unicodelibfile):
 		if not os.path.exists(unicodelibfile):
 			print('Unicode library file not found: %s' % unicodelibfile)
 			return
 		print ('Loading Unicode library: %s' % unicodelibfile)
 		filedesc = open(unicodelibfile, mode = 'r')
-		self.stuct = {}
 		key = None
 		txt = ''
 		for line in filedesc:
@@ -59,8 +62,14 @@ class CharacherDescription(object):
 				else:
 					key = line.split('\t')[0]
 					txt = line.split('\t')[1] # + '\n'
-					self.stuct[key] = txt
+					if key not in self.stuct:
+						self.stuct[key] = txt
+					else:
+						print ('Unicodes overlap:')
+						print ('\t%s = %s' % (key, self.stuct[key]))
+						print ('\t%s = %s' % (key, txt))
 		filedesc.close()
+
 
 	def getCharacterDescription(self, unicodechar):
 		if unicodechar in self.stuct:
@@ -147,7 +156,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'unicode': unicodes[0],
 				'display_unicode': '',
 				'types': tp,
-				'description': 'Local form of %s' % CharDesc.getCharacterDescription(unicodes[0])
+				'description': CharDesc.getCharacterDescription(unicodes[0])
 			}
 			resultunicodes.append(item)
 		# else:
@@ -248,6 +257,7 @@ def main(names = None): # names = ['Avar']
 	libraryMainFile = 'cyrillic_library.json'
 	# sortorderfile = 'sortorder_cyrillic.txt'
 	unicodeLibFile = 'unicode14.txt'
+	unicodeLibFile_adds = 'PT_PUA_unicodes-descritions.txt'
 	print ('*'*60)
 	print ('Started compiling the language library')
 	print (workPath)
@@ -263,8 +273,11 @@ def main(names = None): # names = ['Avar']
 	print ('libraryMainFile: %s' % libraryMainFile)
 
 	unicodeLibFile = os.path.join(basePath, unicodeLibFile)
+	unicodeLibFile_adds = os.path.join(basePath, unicodeLibFile_adds)
 
-	CharDesc = CharacherDescription(unicodeLibFile)
+	CharDesc = CharacherDescription()
+	CharDesc.loadUnicodeDescriptionsFile(unicodeLibFile)
+	CharDesc.loadUnicodeDescriptionsFile(unicodeLibFile_adds)
 	print('*' * 60)
 	# return
 
