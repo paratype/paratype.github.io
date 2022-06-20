@@ -154,7 +154,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'id': getUniqName(),
 				'sign': chr(int(unicodes[0], 16)),
 				'unicode': unicodes[0],
-				'display_unicode': '',
+				'display_unicode': unicodes[0],
 				'types': tp,
 				'description': CharDesc.getCharacterDescription(unicodes[0])
 			}
