@@ -141,7 +141,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 			item = {
 				'id': getUniqName(),
 				'sign': chr(int(unicodes[0], 16)),
-				'unicode': unicodes[0],
+				'unicodes': [unicodes[0]],
 				'display_unicode': unicodes[0],
 				'types': tp,
 				'description': CharDesc.getCharacterDescription(unicodes[0])
@@ -160,7 +160,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 			item = {
 				'id': getUniqName(),
 				'sign': chr(int(unicodes[0], 16)),
-				'unicode': unicodes[0],
+				'unicodes': [unicodes[0]],
 				'display_unicode': display_unicode,
 				'types': tp,
 				'description': '%s %s' % (CharDesc.getCharacterDescription(unicodes[0]), name_eng)
@@ -203,7 +203,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					item = {
 						'id': getUniqName(),
 						'sign': chr(int(_unicodes[0], 16)),
-						'unicode': _unicodes[0],
+						'unicodes': [_unicodes[0]],
 						'display_unicode': _unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0])
@@ -219,7 +219,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					item = {
 						'id': getUniqName(),
 						'sign': chr(int(_unicodes[0], 16)),
-						'unicode': _unicodes[0],
+						'unicodes': [_unicodes[0]],
 						'display_unicode': '', #_unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0])
@@ -234,7 +234,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					item = {
 						'id': getUniqName(),
 						'sign': chr(int(_unicodes[0], 16)),
-						'unicode': _unicodes[0],
+						'unicodes': [_unicodes[0]],
 						'display_unicode': _unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0])
