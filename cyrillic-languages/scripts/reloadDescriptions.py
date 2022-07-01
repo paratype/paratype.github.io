@@ -4,7 +4,7 @@ import json
 import os.path
 
 
-descriptionsfile = 'langdesc-eng.txt'
+descriptionsfile = 'langdesc-eng_e.txt'
 
 workPath = os.path.dirname(__file__)
 
@@ -28,6 +28,15 @@ txt = ''
 strukt = []
 item = {}
 
+def clearDangerSymbols(text):
+	dangersymbols = {
+		'\t': ' ',
+		'\"': '\''
+	}
+	for k, v in dangersymbols.items():
+		text = text.replace(k, v)
+	return text
+
 
 for idx, line in enumerate(data):
 	# line = line.rstrip()
@@ -46,7 +55,7 @@ for idx, line in enumerate(data):
 				item['language_group_eng'] = textl
 				break
 			else:
-				textl.append(t.rstrip())
+				textl.append(clearDangerSymbols(t.rstrip()))
 	if line.startswith('# description english'):
 		textl = []
 		for t in data[idx+1:]:
@@ -54,7 +63,7 @@ for idx, line in enumerate(data):
 				item['description_eng'] = ''.join(textl)
 				break
 			else:
-				textl.append(t)
+				textl.append(clearDangerSymbols(t))
 
 errpath = []
 for item in strukt:
@@ -100,30 +109,7 @@ for item in strukt:
 
 for epath in errpath:
 	print (epath)
-#
-# "name_eng": "Abkhazian",
-# "name_rus": "Абхазский",
-# "local": "CYR",
-# "language_group": [
-# 	"Северокавказские языки",
-# 	"Абхазо-Адыгские (Западнокавказские) языки"
-# ],
-# "alt_names_eng": [
-# 	"Abkhazian",
-# 	"Bzyb",
-# 	"Abzhui",
-# 	"Samurzakan"
-# ],
-# "description_eng": "The modern Cyrillic-based Abkhaz alphabet was introduced in 1954 and reformed in the late 1990s. It consists of 26 letters of the Russian alphabet ( Ё, Й, Щ, Ъ, Э, Ю, Я are missing ) and a number of specific letters, ligatures and combinations.\nSigns important for the language that are not included in the alphabet are shown separately.\n",
-# "description_rus": "Современный абхазский алфавит на основе кириллицы был введен в 1954 году и реформирован в конце 1990-х гг. Он состоит из 26 букв русского алфавита (отсутствуют Ё, Й, Щ, Ъ, Э, Ю, Я) и ряда специфических букв, лигатур и сочетаний.\nОтдельно показаны важные для языка знаки, не входящие в алфавит.",
-# "uppercase_alphabet": "А Б В Г Гь Гә Ӷ Ӷь Ӷә Д Дә Е Ж Жь Жә З Ӡ Ӡә И К Кь Кә Қ Қь Қә Ҟ Ҟь Ҟә Л М Н О П Ԥ Р С Т Тә Ҭ Ҭә У Ф Х Хь Хә Ҳ Ҳә Ц Цә Ҵ Ҵә Ч Ҷ Ҽ Ҿ Ш Шь Шә Ы Ҩ Џ Џь Ь Ә",
-# "lowercase_alphabet": "а б в г гь гә ӷ ӷь ӷә д дә е ж жь жә з ӡ ӡә и к кь кә қ қь қә ҟ ҟь ҟә л м н о п ԥ р с т тә ҭ ҭә у ф х хь хә ҳ ҳә ц цә ҵ ҵә ч ҷ ҽ ҿ ш шь шә ы ҩ џ џь ь ә",
-# "uppercase_dialect": "Ҙ Ҙә Ӡʼ Ҫ Ҫә Хʼ Хʼә Цʼ Ҵʼ",
-# "lowercase_dialect": "ҙ ҙә ӡʼ ҫ ҫә хʼ хʼә цʼ ҵʼ",
-# "uppercase_historic": "Гу Ҕ Ҕь Ҕу Ку Ҟу Ҧ Ху",
-# "lowercase_historic": "гу ҕ ҕь ҕу ку ҟу ҧ ху",
-# "uppercase_lexic": "Й Ў",
-# "lowercase_lexic": "й ў",
+
 
 
 
