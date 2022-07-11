@@ -30,8 +30,12 @@ signtypes = {
 }
 
 # SC = CyrillicOrderSorter(sortorderfile)
-
-
+# sortorderfile = 'sortorder_cyrillic.txt'
+libraryMainFile = 'cyrillic_library.json'
+unicodeLibFiles = ['unicode14.txt', 'PT_PUA_unicodes-descritions.txt']
+# libraryPath =   # langlib
+# outputPath = 'site'
+# outputLibraryPath = 'baselib'
 
 class CharacherDescription(object):
 	dangersymbols = {
@@ -246,7 +250,12 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 			description = ', '.join(unicodes)
 			if signtypes[featuresign] in types:
 				if alts and alts[0]['unicodes'] == unicodes:
-					description = 'Localized form of #%s' % ', '.join(alts[0]['unicodes'])
+					description = 'Localized form of %s' % ', '.join(alts[0]['unicodes'])
+				elif alts and alts[0]['unicodes'] != unicodes:
+					adddesrc = ''
+					if unicodes:
+						adddesrc = '(%s)' % ', '.join(unicodes)
+					description = 'Localized form of %s %s' % (', '.join(alts[0]['unicodes']), adddesrc)
 			chars_list_wrap.append({
 				'id': getUniqName(),
 				'sign': sign,
@@ -258,50 +267,43 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 
 	return (chars_list_wrap, resultunicodes, uniqunicodes)
 
-def main(names = None): # names = ['Avar']
+def compileLagnuages(workPath, names = None): # names = ['Avar']
 
-	workPath = os.path.dirname(__file__)
+	# workPath = os.path.dirname(__file__)
 
-	libraryPath = 'library'  # langlib
-	outputPath = 'site'
-	outputLibraryPath = 'baselib'
-	libraryMainFile = 'cyrillic_library.json'
-	# sortorderfile = 'sortorder_cyrillic.txt'
-	unicodeLibFile = 'unicode14.txt'
-	unicodeLibFile_adds = 'PT_PUA_unicodes-descritions.txt'
-	print ('*'*60)
-	print ('Started compiling the language library')
-	print (workPath)
+	print('*' * 60)
+	print('Started compiling the language library')
+	print(workPath)
 	basePath, _s = os.path.split(workPath)
-	print ('basePath: %s' % basePath)
-	libraryPath = os.path.join(basePath, libraryPath)
-	print ('libraryPath: %s' % libraryPath)
+	print('basePath: %s' % basePath)
+	libraryPath = os.path.join(basePath, 'library')
+	print('libraryPath: %s' % libraryPath)
 
-	libraryMainFile = os.path.join(basePath, libraryMainFile)
-	if not os.path.exists(libraryMainFile):
-		print ('Main library file not found: %s' % libraryMainFile)
+	libraryMainFilePath = os.path.join(basePath, libraryMainFile)
+	if not os.path.exists(libraryMainFilePath):
+		print('Main library file not found: %s' % libraryMainFilePath)
 		return
-	print ('libraryMainFile: %s' % libraryMainFile)
-
-	unicodeLibFile = os.path.join(basePath, unicodeLibFile)
-	unicodeLibFile_adds = os.path.join(basePath, unicodeLibFile_adds)
+	print('libraryMainFile: %s' % libraryMainFilePath)
 
 	CharDesc = CharacherDescription()
-	CharDesc.loadUnicodeDescriptionsFile(unicodeLibFile)
-	CharDesc.loadUnicodeDescriptionsFile(unicodeLibFile_adds)
+	for ulf in unicodeLibFiles:
+		upath = os.path.join(basePath, ulf)
+		CharDesc.loadUnicodeDescriptionsFile(upath)
 	print('*' * 60)
-	# return
 
-	with open(libraryMainFile, "r") as read_file:
+	with open(libraryMainFilePath, "r") as read_file:
 		data = json.load(read_file)
 
 	if not names:
 		names = []
 		for item in data:
-			names.append(item['name_eng'])
+			if item['enable']:
+				names.append(item['name_eng'])
 
 	for name in names:
 		namefile = os.path.join(libraryPath, '%s.json' % name)
+		outputJSONfile = os.path.join(basePath, 'site', 'baselib', '%s.json' % name)
+
 		if os.path.exists(namefile):
 			with open(namefile, "r") as read_file:
 				data = json.load(read_file)
@@ -395,11 +397,186 @@ def main(names = None): # names = ['Avar']
 				'lowercase_unicodes_list': lowercase_unicodes_list
 			}
 
-			outputJSONfile = os.path.join(basePath, outputPath, outputLibraryPath, '%s.json' % name)
 			with open(outputJSONfile, "w") as write_file:
 				json.dump(outputdata, write_file, indent = 4, ensure_ascii = False)
 		else:
 			print('*** Not found: %s path:%s' % (name, namefile))
+
+def filterCharacters(name, local, charlist, unicodedlist, puazonelist, nonunicodedlist):
+	# unicodedlist = {}
+	# nonunicodedlist = {}
+	# puazonelist = {}
+
+	for item in charlist:
+		sign = item['sign']
+		unicodes = item['unicodes']
+		display_unicode = item['display_unicode']
+
+		types = item['types']
+		if not types:
+			types = []
+		description = item['description']
+
+		if len(unicodes) > 1:
+			print('*** TOO MUCH UNICODES')
+			print(unicodes)
+		elif len(unicodes) < 1:
+			print('*** NO UNICODES')
+			print(unicodes[0], sign)
+		elif not unicodes:
+			print('*** NULL UNICODE')
+			print(unicodes[0], sign)
+
+		if not display_unicode:
+			if '%s.%s' % (unicodes[0], name) not in nonunicodedlist:
+				nonunicodedlist['%s.%s' % (unicodes[0], name)] = dict(
+					id = getUniqName(),
+					sign = sign,
+					unicodes = [unicodes[0]],
+					local = local,
+					display_unicode = display_unicode,
+					description = description,
+					languages = [dict(name = name, types = types)]
+				)
+			else:
+				print ('*** WRONG LOCALES')
+				print (name, '%s.%s' % (unicodes[0],local))
+				# nonunicodedlist[unicodes[0]]['languages'].append(dict(name = name, types = types))
+		elif display_unicode.startswith('F'):
+			if unicodes[0] not in puazonelist:
+				puazonelist[unicodes[0]] = dict(
+					id = getUniqName(),
+					sign = sign,
+					unicodes = [unicodes[0]],
+					local = local,
+					display_unicode = display_unicode,
+					description = description,
+					languages = [dict(name = name, types = types)]
+				)
+			else:
+				puazonelist[unicodes[0]]['languages'].append(dict(name = name, types = types))
+		else:
+			if unicodes[0] not in unicodedlist:
+				unicodedlist[unicodes[0]] = dict(
+					id = getUniqName(),
+					sign = sign,
+					unicodes = [unicodes[0]],
+					local = local,
+					display_unicode = display_unicode,
+					description = description,
+					languages = [dict(name = name, types = types)]
+				)
+			else:
+				unicodedlist[unicodes[0]]['languages'].append(dict(name = name, types = types))
+	return unicodedlist, puazonelist, nonunicodedlist
+
+
+def makeMainCharactersSet(workPath):
+	print('*' * 60)
+	print('making MainCharactersSet')
+	print(workPath)
+	basePath, _s = os.path.split(workPath)
+	print('basePath: %s' % basePath)
+	libraryPath = os.path.join(basePath, 'library')
+	print('libraryPath: %s' % libraryPath)
+
+	libraryMainFilePath = os.path.join(basePath, libraryMainFile)
+	if not os.path.exists(libraryMainFilePath):
+		print('Main library file not found: %s' % libraryMainFilePath)
+		return
+	print('libraryMainFile: %s' % libraryMainFilePath)
+
+	with open(libraryMainFilePath, "r") as read_file:
+		data = json.load(read_file)
+
+	names = []
+	for item in data:
+		if item['enable']:
+			names.append(item['name_eng'])
+
+	unicodedlist_UC = {}
+	nonunicodedlist_UC = {}
+	puazonelist_UC = {}
+
+	unicodedlist_LC = {}
+	nonunicodedlist_LC = {}
+	puazonelist_LC = {}
+
+	for name in names:
+		mainfile = os.path.join(libraryPath, '%s.json' % name)
+		inputJSONfile = os.path.join(basePath, 'site', 'baselib', '%s.json' % name)
+
+		if os.path.exists(inputJSONfile):
+			with open(inputJSONfile, "r") as read_file:
+				data = json.load(read_file)
+			print('%s path:%s' % (name, inputJSONfile))
+
+			local = 'CYR'
+			if os.path.exists(mainfile):
+				with open(mainfile, "r") as read_file:
+					maindata = json.load(read_file)
+				print('%s path:%s' % (name, mainfile))
+				local = maindata['local']
+			print('LOCAL:', local)
+
+
+
+			uppercase_unicodes_list = data['uppercase_unicodes_list']
+			lowercase_unicodes_list = data['lowercase_unicodes_list']
+
+			unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC = filterCharacters(name, local, uppercase_unicodes_list, unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC)
+			unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC = filterCharacters(name, local, lowercase_unicodes_list, unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC)
+
+
+
+	UC_unicoded_list = []
+	for k,v in sorted(unicodedlist_UC.items()):
+		UC_unicoded_list.append(v)
+	UC_pua_list = []
+	for k,v in sorted(puazonelist_UC.items()):
+		UC_pua_list.append(v)
+	UC_nonunicoded_list = []
+	for k,v in sorted(nonunicodedlist_UC.items()):
+		UC_nonunicoded_list.append(v)
+
+	LC_unicoded_list = []
+	for k,v in sorted(unicodedlist_LC.items()):
+		LC_unicoded_list.append(v)
+	LC_pua_list = []
+	for k,v in sorted(puazonelist_LC.items()):
+		LC_pua_list.append(v)
+	LC_nonunicoded_list = []
+	for k,v in sorted(nonunicodedlist_LC.items()):
+		LC_nonunicoded_list.append(v)
+
+	dataset = dict(
+		uppercase_unicodes_list = UC_unicoded_list,
+		lowercase_unicodes_list = LC_unicoded_list,
+
+		uppercase_puazone_list = UC_pua_list,
+		lowercase_puazone_list = LC_pua_list,
+
+		uppercase_nonunicode_list = UC_nonunicoded_list,
+		lowercase_nonunicode_list = LC_nonunicoded_list,
+	)
+	outputJSONfile = os.path.join(basePath, 'site', 'cyrillic_characters_lib.json')
+	with open(outputJSONfile, "w") as write_file:
+		json.dump(dataset, write_file, indent = 4, ensure_ascii = False)
+
+
+
+
+
+
+
+
+
+
+def main(names = None):
+	pathname = os.path.dirname(sys.argv[0])
+	workPath = os.path.abspath(pathname)
+	# compileLagnuages(workPath, names)
+	makeMainCharactersSet(workPath)
 
 
 if __name__ == '__main__':
