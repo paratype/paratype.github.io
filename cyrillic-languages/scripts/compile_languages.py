@@ -519,15 +519,11 @@ def makeMainCharactersSet(workPath):
 				local = maindata['local']
 			print('LOCAL:', local)
 
-
-
 			uppercase_unicodes_list = data['uppercase_unicodes_list']
 			lowercase_unicodes_list = data['lowercase_unicodes_list']
 
 			unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC = filterCharacters(name, local, uppercase_unicodes_list, unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC)
 			unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC = filterCharacters(name, local, lowercase_unicodes_list, unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC)
-
-
 
 	UC_unicoded_list = []
 	for k,v in sorted(unicodedlist_UC.items()):
@@ -565,17 +561,10 @@ def makeMainCharactersSet(workPath):
 
 
 
-
-
-
-
-
-
-
 def main(names = None):
 	pathname = os.path.dirname(sys.argv[0])
 	workPath = os.path.abspath(pathname)
-	# compileLagnuages(workPath, names)
+	compileLagnuages(workPath, names)
 	makeMainCharactersSet(workPath)
 
 
