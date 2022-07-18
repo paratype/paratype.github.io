@@ -428,6 +428,7 @@ def filterCharacters(name, local, charlist, unicodedlist, puazonelist, nonunicod
 			print(unicodes[0], sign)
 
 		if not display_unicode:
+			# TODO надо попробовать name заменить на local, чтобы избавится от дубля Македонского и Сербского
 			if '%s.%s' % (unicodes[0], name) not in nonunicodedlist:
 				nonunicodedlist['%s.%s' % (unicodes[0], name)] = dict(
 					id = getUniqName(),
