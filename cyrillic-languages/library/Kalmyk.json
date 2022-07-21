@@ -1,7 +1,7 @@
 {
     "name_eng": "Kalmyk",
     "name_rus": "Калмыцкий",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Mongolian"
@@ -25,12 +25,16 @@
     ],
     "description_eng": "Kalmyk alphabet based on the Cyrillic alphabet was introduced in 1938 and was reformed in 1941. It consists of 32 letters of the Russian alphabet (the letter Ъ can be found in borrowings) and six specific characters. Signs and historical forms previously used in the language are shown separately.\n",
     "description_rus": "Cовременный калмыцкий алфавит на основе кириллицы был введен в 1938 году и был реформирован в 1941-м. Состоит из 32 букв русского алфавита (буква Ъ может встречаться в заимствованиях) и шести специфических знаков. Отдельно показаны ранее использовавшиеся в языке знаки и исторические формы.",
-    "uppercase_alphabet": "А Ә Б В Г Һ Д Е Ё Ж Җ З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-    "lowercase_alphabet": "а ә б в г һ д е ё ж җ з и й к л м н ң о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "Ӓ Ӧ Ӱ",
-    "lowercase_historic": "ӓ ӧ ӱ",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Ә Б В Г Һ Д Е Ё Ж Җ З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "lowercase": "а ә б в г һ д е ё ж җ з и й к л м н ң о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я"
+        },
+        {
+            "type": "historic",
+            "uppercase": "Ӓ Ӧ Ӱ",
+            "lowercase": "ӓ ӧ ӱ"
+        }
+    ]
 }

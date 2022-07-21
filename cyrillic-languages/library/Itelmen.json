@@ -1,7 +1,7 @@
 {
     "name_eng": "Itelmen",
     "name_rus": "Ительменский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Chukchi - Kamchatka"
     ],
@@ -17,12 +17,11 @@
     ],
     "description_eng": "The composition of the modern Itelmen alphabet, in addition to the basic characters of the Cyrillic alphabet, contains a number of specific characters and ligatures.\n",
     "description_rus": "В составе современного алфавита ительменов, помимо основных знаков кириллического алфавита, содержится ряд специфических знаков и лигатур.",
-    "uppercase_alphabet": "А Ӑ Б В Г Д Е Ё Ж З И Й К Кʼ Ӄ Ӄʼ Л Љ Ԯ М Н Њ Ӈ О  П Пʼ Р С Т Тʼ У Ў Ф Х Ҳ Ц Ч Чʼ Ш Щ Ъ Ы Ь Ә Э Ю Я",
-    "lowercase_alphabet": "а ӑ б в г д е ё ж з и й к кʼ ӄ ӄʼ л љ ԯ м н њ ӈ о  п пʼ р с т тʼ у ў ф х ҳ ц ч чʼ ш щ ъ ы ь ә э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Ӑ Б В Г Д Е Ё Ж З И Й К Кʼ Ӄ Ӄʼ Л Љ Ԯ М Н Њ Ӈ О  П Пʼ Р С Т Тʼ У Ў Ф Х Ҳ Ц Ч Чʼ Ш Щ Ъ Ы Ь Ә Э Ю Я",
+            "lowercase": "а ӑ б в г д е ё ж з и й к кʼ ӄ ӄʼ л љ ԯ м н њ ӈ о  п пʼ р с т тʼ у ў ф х ҳ ц ч чʼ ш щ ъ ы ь ә э ю я"
+        }
+    ]
 }

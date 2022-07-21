@@ -1,7 +1,7 @@
 {
     "name_eng": "Serbian",
     "name_rus": "Сербский",
-    "local": "sr-Cyrl-CS",
+    "local": "sr",
     "language_group_eng": [
         "Indo-European",
         "Slavic"
@@ -16,12 +16,16 @@
     ],
     "description_eng": "The modern Serbian alphabet ( vukovica ) was created at the beginning of the 19th century. It lacks the letters of the Russian alphabet Ё, Й, Щ, Ъ, Ы, Ь, Э, Ю, Я, but includes six characters missing in the Russian alphabet. In addition, lowercase б has a peculiar form. Lowercase italic г, д, п, т, ш, also differ from the standard ones. Accented characters, used in the language to distinguish between homonyms, as well as the Cyrillic S, used to write dialect forms, are shown separately.\n",
     "description_rus": "Современный сербский алфавит (вуковица) был создан в начале XIX века. В нем отсутствуют буквы русского алфавита Ё, Й, Щ, Ъ, Ы, Ь, Э, Ю, Я, но есть шесть знаков, отсутствующих в русском алфавите. Кроме того, строчная б имеет своеобразную форму. Строчные г, д, п, т, ш в курсиве тоже отличаются от стандартных. Отдельно показаны акцентированные знаки, использующиеся в языке для различения омонимов, а также кириллическая S, используемая для записи диалектных форм.",
-    "uppercase_alphabet": "А Б В Г Д Ђ Е Ж З И Ј К Л Љ М Н Њ О П Р С Т Ћ У Ф Х Ц Ч Џ Ш",
-    "lowercase_alphabet": "а &б +б в &г +г &д +д ђ е ж з и ј к л љ м н њ о &п +п р с &т +т ћ у ф х ц ч џ &ш +ш",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "!F830 Ê !F839 Ѕ",
-    "lowercase_lexic": "!F831 ê !F83A ѕ"
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Д Ђ Е Ж З И Ј К Л Љ М Н Њ О П Р С Т Ћ У Ф Х Ц Ч Џ Ш",
+            "lowercase": "а &б +б в &г +г &д +д ђ е ж з и ј к л љ м н њ о &п +п р с &т +т ћ у ф х ц ч џ &ш +ш"
+        },
+        {
+            "type": "extended",
+            "uppercase": "!F830 Ê !F839 Ѕ",
+            "lowercase": "!F831 ê !F83A ѕ"
+        }
+    ]
 }

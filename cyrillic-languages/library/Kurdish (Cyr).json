@@ -1,7 +1,7 @@
 {
     "name_eng": "Kurdish (Cyr)",
     "name_rus": "Курдский (Кир.)",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Indo-European",
         "Iranian",
@@ -21,12 +21,11 @@
     ],
     "description_eng": "The Kurdish alphabet based on the Cyrillic alphabet contains 29 letters of the Russian alphabet and a number of specific characters and combinations.\n",
     "description_rus": "В составе курдского алфавита на основе кириллицы 29 букв русского алфавита и ряд специфических знаков и сочетаний.",
-    "uppercase_alphabet": "А Б В Г Гʼ Д Е Ә Әʼ Ж З И Й К Кʼ Л М Н О Ӧ П Пʼ Р Рʼ С Т Тʼ У Ф Х Һ Һʼ Ч Чʼ Щ Ш Ь Ԛ Ԝ",
-    "lowercase_alphabet": "а б в г гʼ д е ә әʼ ж з и й к кʼ л м н о ӧ п пʼ р рʼ с т тʼ у ф х һ һʼ ч чʼ щ ш ь ԛ ԝ",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Гʼ Д Е Ә Әʼ Ж З И Й К Кʼ Л М Н О Ӧ П Пʼ Р Рʼ С Т Тʼ У Ф Х Һ Һʼ Ч Чʼ Щ Ш Ь Ԛ Ԝ",
+            "lowercase": "а б в г гʼ д е ә әʼ ж з и й к кʼ л м н о ӧ п пʼ р рʼ с т тʼ у ф х һ һʼ ч чʼ щ ш ь ԛ ԝ"
+        }
+    ]
 }

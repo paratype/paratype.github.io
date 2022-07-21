@@ -1,7 +1,7 @@
 {
     "name_eng": "Nivkh",
     "name_rus": "Нивхский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "isolated 'Paleoasiatic' language"
     ],
@@ -14,12 +14,11 @@
     ],
     "description_eng": "The modern Cyrillic-based Nivkh alphabet was introduced in 1937 and reformed in the 1970s and 1980s. Now the Nivkh alphabet consists of 33 letters of the Russian alphabet and a number of specific characters and combinations.\n",
     "description_rus": "Современный нивхский алфавит на основе кириллицы был введен в 1937 году и реформирован в 1970-е и 1980-е годы. Сейчас нивхский алфавит состоит из 33 букв русского алфавита и ряда специфических знаков и сочетаний.",
-    "uppercase_alphabet": "А Б В Г Ӷ Ғ Ӻ Д Е Ё Ж З И Й Йи К Кʼ Ӄ Ӄʼ Л М Н Ӈ О П Пʼ Р  С Т Тʼ У Ф Х Ӽ Ӿ Ц Ч Чʼ Ш Щ Ъ Ы Йы Ь Э Ю Я",
-    "lowercase_alphabet": "а б в г ӷ ғ ӻ д е ё ж з и й йи к кʼ ӄ ӄʼ л м н ӈ о п пʼ р  с т тʼ у ф х ӽ ӿ ц ч чʼ ш щ ъ ы йы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Ӷ Ғ Ӻ Д Е Ё Ж З И Й Йи К Кʼ Ӄ Ӄʼ Л М Н Ӈ О П Пʼ Р  С Т Тʼ У Ф Х Ӽ Ӿ Ц Ч Чʼ Ш Щ Ъ Ы Йы Ь Э Ю Я",
+            "lowercase": "а б в г ӷ ғ ӻ д е ё ж з и й йи к кʼ ӄ ӄʼ л м н ӈ о п пʼ р  с т тʼ у ф х ӽ ӿ ц ч чʼ ш щ ъ ы йы ь э ю я"
+        }
+    ]
 }

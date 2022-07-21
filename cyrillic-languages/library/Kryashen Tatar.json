@@ -1,7 +1,7 @@
 {
     "name_eng": "Kryashen Tatar",
     "name_rus": "Кряшенский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Turkic"
@@ -15,12 +15,11 @@
     ],
     "description_eng": "The Cyrillic-based Kryashen alphabet was developed in the second half of the 19th century. After 1930, its use was discontinued, and it only came into use again in the early 1990s. The modern Kryashen alphabet consists of 33 letters of the Russian alphabet and a number of specific characters.\n",
     "description_rus": "Кряшенский алфавит на основе кириллицы был разработан во второй половине XIX века. После 1930 года его использование было прекращено, и он снова вошел в употребление только в начале 1990-х годов. Cовременный кряшенский алфавит состоит из 33 букв русского алфавита и ряда специфических знаков.",
-    "uppercase_alphabet": "А Ӓ Б В Г Д Е Ё Ж З І И Й К Л М Н Ҥ О Ӧ П Р С Т У Ӱ Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я Ѣ Ѳ Ѵ",
-    "lowercase_alphabet": "а ӓ б в г д е ё ж з і и й к л м н ҥ о ӧ п р с т у ӱ ф х ц ч ш щ ъ ы ь э ю я ѣ ѳ ѵ",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Ӓ Б В Г Д Е Ё Ж З І И Й К Л М Н Ҥ О Ӧ П Р С Т У Ӱ Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я Ѣ Ѳ Ѵ",
+            "lowercase": "а ӓ б в г д е ё ж з і и й к л м н ҥ о ӧ п р с т у ӱ ф х ц ч ш щ ъ ы ь э ю я ѣ ѳ ѵ"
+        }
+    ]
 }

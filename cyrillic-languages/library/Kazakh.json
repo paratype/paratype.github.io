@@ -1,7 +1,7 @@
 {
     "name_eng": "Kazakh",
     "name_rus": "Казахский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Turkic"
@@ -19,12 +19,11 @@
     ],
     "description_eng": "The modern Kazakh alphabet based on the Cyrillic alphabet was introduced in 1940. It consists of 33 letters of the Russian alphabet and 9 specific characters.\n",
     "description_rus": "Cовременный казахский алфавит на основе кириллицы был принят в 1940 году. Он состоит из 33 букв русского алфавита и 9 специфических знаков.",
-    "uppercase_alphabet": "А Ә Б В Г Ғ Д Е Ё Ж З И Й К Қ Л М Н Ң О Ө П Р С Т У Ұ Ү Ф Х Һ Ц Ч Ш Щ Ъ Ы І Ь Э Ю Я",
-    "lowercase_alphabet": "а ә б в г ғ д е ё ж з и й к қ л м н ң о ө п р с т у ұ ү ф х һ ц ч ш щ ъ ы і ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Ә Б В Г Ғ Д Е Ё Ж З И Й К Қ Л М Н Ң О Ө П Р С Т У Ұ Ү Ф Х Һ Ц Ч Ш Щ Ъ Ы І Ь Э Ю Я",
+            "lowercase": "а ә б в г ғ д е ё ж з и й к қ л м н ң о ө п р с т у ұ ү ф х һ ц ч ш щ ъ ы і ь э ю я"
+        }
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "name_eng": "Adyge",
     "name_rus": "Адыгейский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "North Caucasian",
         "Abkhazian - Adyghe (Western Caucasian)"
@@ -22,12 +22,11 @@
     ],
     "description_eng": "The modern Adyghe alphabet based on the Cyrillic alphabet was introduced in 1938. It consists of 33 letters of the Russian alphabet, as well as a number of specific combinations and the 'palochka' sign.\n",
     "description_rus": "Современный адыгейский алфавит на основе кириллицы был введен в 1938 году. Он состоит из 33 букв русского алфавита, а также ряда специфических сочетаний и знака «палочка».",
-    "uppercase_alphabet": "А Б В Г Гу Гъ Гъу Д Дж Дз Дзу Е Ё Ж Жь Жъ Жъу З И Й К Ку Къ Къу КӀ КӀу Л Ль ЛӀ М Н О П ПӀ ПӀу Р С Т ТӀ ТӀу У Ф ФӀ Х Хь Ху Хъ Хъу Ц Цу ЦӀ Ч Чъ ЧӀ Ш Шъ Шъу ШӀ ШӀу Щ Ъ Ы Ь Э Ю Я Ӏ Ӏу",
-    "lowercase_alphabet": "а б в г гу гъ гъу д дж дз дзу е ё ж жь жъ жъу з и й к ку къ къу кӏ кӏу л ль лӏ м н о п пӏ пӏу р с т тӏ тӏу у ф фӏ х хь ху хъ хъу ц цу цӏ ч чъ чӏ ш шъ шъу шӏ шӏу щ ъ ы ь э ю я ӏ ӏу",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Гу Гъ Гъу Д Дж Дз Дзу Е Ё Ж Жь Жъ Жъу З И Й К Ку Къ Къу КӀ КӀу Л Ль ЛӀ М Н О П ПӀ ПӀу Р С Т ТӀ ТӀу У Ф ФӀ Х Хь Ху Хъ Хъу Ц Цу ЦӀ Ч Чъ ЧӀ Ш Шъ Шъу ШӀ ШӀу Щ Ъ Ы Ь Э Ю Я Ӏ Ӏу",
+            "lowercase": "а б в г гу гъ гъу д дж дз дзу е ё ж жь жъ жъу з и й к ку къ къу кӏ кӏу л ль лӏ м н о п пӏ пӏу р с т тӏ тӏу у ф фӏ х хь ху хъ хъу ц цу цӏ ч чъ чӏ ш шъ шъу шӏ шӏу щ ъ ы ь э ю я ӏ ӏу"
+        }
+    ]
 }

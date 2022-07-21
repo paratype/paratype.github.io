@@ -1,7 +1,7 @@
 {
     "name_eng": "Khanty",
     "name_rus": "Хантыйский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Uralic",
         "Finno - Ugric",
@@ -22,12 +22,16 @@
     ],
     "description_eng": "The Khanty alphabet based on the Cyrillic alphabet was introduced in 1937. Reformed in 1952 and 2000. The modern alphabet summarized for four dialects of the language - Vakhovsky, Kazymsky, Surgut and Shuryshkarsky - consists of letters of the Russian alphabet and a number of specific characters. Alternative forms of characters preferred for use in the Khanty language on the territory of the Yamalo - Nenets Okrug are given too. Historical signs important for the language and signs found in lexicographic sources are shown separately.\n",
     "description_rus": "Хантыйский алфавит на основе кириллицы был введен в 1937 году. Реформирован в 1952 и 2000 годах. Cовременный суммарный алфавит для четырех диалектов языка — ваховского, казымского, сургутского и шурышкарского — состоит из букв русского алфавита и ряда специфических знаков. Также приведены альтернативные формы знаков, предпочтительные для использования в хантыйском языке на территории Ямало-Ненецкого округа. Отдельно показаны важные для языка исторические знаки и знаки, встречающиеся в лексикографических источниках.",
-    "uppercase_alphabet": "А Ӓ Ӑ Б В Г Д Е Ё Ә Ӛ К Қ +Ӄ Л Ԯ +Ԓ М Н Ң +Ӈ О Ӧ Ө Ӫ П Р С Т У Ӱ Ў Ф Х Ҳ +Ӽ Ц Ч Ҷ + Ш Щ Ъ Ы Ь Э Є +Ԑ  + Ю  Я ",
-    "lowercase_alphabet": "а ӓ ӑ б в г д е ё ә ӛ к қ +ӄ л ԯ +ԓ м н ң +ӈ о ӧ ө ӫ п р с т у ӱ ў ф х ҳ +ӽ ц ч ҷ + ш щ ъ ы ь э є +ԑ  + ю  я ",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": " Ј Лʼ    Чʼ",
-    "lowercase_lexic": " ј лʼ    чʼ"
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Ӓ Ӑ Б В Г Д Е Ё Ә Ӛ К Қ +Ӄ Л Ԯ +Ԓ М Н Ң +Ӈ О Ӧ Ө Ӫ П Р С Т У Ӱ Ў Ф Х Ҳ +Ӽ Ц Ч Ҷ + Ш Щ Ъ Ы Ь Э Є +Ԑ  + Ю  Я ",
+            "lowercase": "а ӓ ӑ б в г д е ё ә ӛ к қ +ӄ л ԯ +ԓ м н ң +ӈ о ӧ ө ӫ п р с т у ӱ ў ф х ҳ +ӽ ц ч ҷ + ш щ ъ ы ь э є +ԑ  + ю  я "
+        },
+        {
+            "type": "extended",
+            "uppercase": " Ј Лʼ    Чʼ",
+            "lowercase": " ј лʼ    чʼ"
+        }
+    ]
 }

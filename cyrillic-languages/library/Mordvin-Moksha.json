@@ -1,7 +1,7 @@
 {
     "name_eng": "Mordvin-Moksha",
     "name_rus": "Мордовско-Мокшанский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Uralic",
         "Finno - Ugric",
@@ -20,12 +20,11 @@
     ],
     "description_eng": "The first alphabets of the Moksha language based on the Cyrillic alphabet were created in the 18th century. The modern Mordovian - Moksha alphabet based on the Cyrillic alphabet was approved in 1927 and completely coincides with Russian in composition.\n",
     "description_rus": "Первые алфавиты мокшанского языка на основе кириллицы были созданы в XVIII веке. Cовременный мордовско-мокшанский алфавит на основе кириллицы был утвержден в 1927 году и по составу полностью совпадает с русским.",
-    "uppercase_alphabet": "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-    "lowercase_alphabet": "а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "lowercase": "а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я"
+        }
+    ]
 }

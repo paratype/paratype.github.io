@@ -1,7 +1,7 @@
 {
     "name_eng": "Yakut",
     "name_rus": "Якутский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Turkic"
@@ -17,12 +17,11 @@
     ],
     "description_eng": "Yakut alphabet based on the Cyrillic alphabet was introduced in 1939. It consists of 33 letters of the Russian alphabet ( letters Е, Ё, Ж, З, Ф, Ц, Ш, Щ, Ь, Ю, Я are used in borrowings ) and a number of specific letters and combinations. The signs considered during sorting as equivalents of the main sign are given too.\n",
     "description_rus": "Cовременный якутский алфавит на основе кириллицы был введен в 1939 году. Он состоит из 33 букв русского алфавита (буквы Е, Ё, Ж, З, Ф, Ц, Ш, Щ, Ь, Ю, Я используются в заимствованиях) и ряда специфических букв и сочетаний. Также приведены знаки рассматриваемые при сортировке как эквиваленты основного знака.",
-    "uppercase_alphabet": "А Аа Б В Г Ҕ Д Дь Е Ё Ж З И Ии Иэ Й  К Л М Н Ҥ Нь О Оо Ө Өө П Р С Һ Т У Уо Уу Ү Үө Үү Ф Х Ц Ч Ш Щ Ъ Ы Ыа Ыы Ь Э Ээ Ю Я",
-    "lowercase_alphabet": "а аа б в г ҕ д дь е ё ж з и ии иэ й  к л м н ҥ нь о оо ө өө п р с һ т у уо уу ү үө үү ф х ц ч ш щ ъ ы ыа ыы ь э ээ ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Аа Б В Г Ҕ Д Дь Е Ё Ж З И Ии Иэ Й  К Л М Н Ҥ Нь О Оо Ө Өө П Р С Һ Т У Уо Уу Ү Үө Үү Ф Х Ц Ч Ш Щ Ъ Ы Ыа Ыы Ь Э Ээ Ю Я",
+            "lowercase": "а аа б в г ҕ д дь е ё ж з и ии иэ й  к л м н ҥ нь о оо ө өө п р с һ т у уо уу ү үө үү ф х ц ч ш щ ъ ы ыа ыы ь э ээ ю я"
+        }
+    ]
 }

@@ -1,7 +1,7 @@
 {
     "name_eng": "Dolgan",
     "name_rus": "Долганский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Turkic"
@@ -15,12 +15,11 @@
     ],
     "description_eng": "The modern Dolgan alphabet based on the Cyrillic alphabet consists of 33 letters of the Russian alphabet ( letters Е, Ё, Ж, З, Ф, Ц, Ш, Щ, Ь, Ю, Я are used in borrowings ) and a number of specific letters. The signs considered as equivalents of the main sign during sorting are shown.\n",
     "description_rus": "Современный долганский алфавит на основе кириллицы состоит из 33 букв русского алфавита (буквы Е, Ё, Ж, З, Ф, Ц, Ш, Щ, Ь, Ю, Я используются в заимствованиях) и ряда специфических букв. Также приведены знаки рассматриваемые при сортировке как эквиваленты основного знака.",
-    "uppercase_alphabet": "А Б В Г Д Дь Е Ё Ж З И Й К Һ Л М Н Ӈ Ӈь О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-    "lowercase_alphabet": "а б в г д дь е ё ж з и й к һ л м н ӈ ӈь о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "",
-    "lowercase_lexic": ""
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Д Дь Е Ё Ж З И Й К Һ Л М Н Ӈ Ӈь О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "lowercase": "а б в г д дь е ё ж з и й к һ л м н ӈ ӈь о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я"
+        }
+    ]
 }

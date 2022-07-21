@@ -1,7 +1,7 @@
 {
     "name_eng": "Negidaliskij",
     "name_rus": "Негидальский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Tungus- Manchu"
@@ -15,12 +15,16 @@
     ],
     "description_eng": "The alphabet of the Negidal language based on the Cyrillic alphabet was formed in 2009 and includes, in addition to the letters of the Russian alphabet ( the letters Ж, З, Р, Ф, Ц, Ш, Щ, Ь are used in borrowings ), a number of additional characters. Signs that are not included in the alphabet, used in printed texts to indicate long vowels, are shown separately.\n",
     "description_rus": "Алфавит негидальского языка на основе кириллицы сформирован в 2009 году и включает, помимо букв русского алфавита (буквы Ж, З, Р, Ф, Ц, Ш, Щ, Ь используются в заимствованиях), ряд дополнительных знаков. Отдельно показаны знаки, не входящие в алфавит, используемые в печатных текстах для обозначения долгих гласных.",
-    "uppercase_alphabet": "А Б В Г Ғ Д Е Ё Ж З Ӡ И Й К Л М Н Ӈ О Ө П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-    "lowercase_alphabet": "а б в г ғ д е ё ж з ӡ и й к л м н ӈ о ө п р с т у ф х ц ч ш щ ъ ы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "   Ӣ   Ӯ    ",
-    "lowercase_lexic": "   ӣ   ӯ    "
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Ғ Д Е Ё Ж З Ӡ И Й К Л М Н Ӈ О Ө П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "lowercase": "а б в г ғ д е ё ж з ӡ и й к л м н ӈ о ө п р с т у ф х ц ч ш щ ъ ы ь э ю я"
+        },
+        {
+            "type": "extended",
+            "uppercase": "   Ӣ   Ӯ    ",
+            "lowercase": "   ӣ   ӯ    "
+        }
+    ]
 }

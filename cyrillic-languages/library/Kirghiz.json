@@ -1,7 +1,7 @@
 {
     "name_eng": "Kirghiz",
     "name_rus": "Киргизский",
-    "local": "CYR",
+    "local": "ru",
     "language_group_eng": [
         "Altaic",
         "Turkic"
@@ -17,12 +17,16 @@
     ],
     "description_eng": "Kyrgyz alphabet based on the Cyrillic alphabet was introduced in 1940. It consists of 33 letters of the Russian alphabet and three specific characters. The letters Ф, Ц, В, Ъ, Ь are used only in borrowings from the Russian language. The signs found in lexicographical sources are singled out separately.\n",
     "description_rus": "Cовременный киргизский алфавит на основе кириллицы был принят в 1940 году. Он состоит из 33 букв русского алфавита и трех специфических знаков. Буквы Ф, Ц, В, Ъ, Ь используются только в заимствованиях из русского языка. Отдельно выделены знаки, встречающиеся в лексикографических источниках.",
-    "uppercase_alphabet": "А Б В Г Д Е Ё Ж З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-    "lowercase_alphabet": "а б в г д е ё ж з и й к л м н ң о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я",
-    "uppercase_dialect": "",
-    "lowercase_dialect": "",
-    "uppercase_historic": "",
-    "lowercase_historic": "",
-    "uppercase_lexic": "Ғ Җ Қ",
-    "lowercase_lexic": "ғ җ қ"
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Д Е Ё Ж З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "lowercase": "а б в г д е ё ж з и й к л м н ң о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я"
+        },
+        {
+            "type": "extended",
+            "uppercase": "Ғ Җ Қ",
+            "lowercase": "ғ җ қ"
+        }
+    ]
 }
