@@ -89,6 +89,7 @@ class CharacherDescription(object):
 			r = self.stuct[unicodechar].strip()
 			for k,v in self.dangersymbols.items():
 				r = r.replace(k, v)
+			r = r.title()
 			return r #self.stuct[unicodechar].strip().replace('\t','')
 		else:
 			return ''
@@ -189,7 +190,7 @@ def checkTypeSign(typesign, name_eng):
 		return None
 
 
-def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None, wrapedunicodes = None, name_eng = None, localdef = 'ru', local = None):
+def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None, wrapedunicodes = None, name_eng = None, localdef = 'ru', local = None, extendedglyph = None, casesign = None):
 	chars_list = [getCharInfo(sign, typestring = typestring) for sign in charsline.split(' ')]
 	chars_list_wrap = []
 	uniqunicodes = []
@@ -200,10 +201,16 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 	resultunicodes = []
 	if wrapedunicodes:
 		resultunicodes.extend(wrapedunicodes)
+	_extendedglyph = []
+	if extendedglyph:
+		_extendedglyph.extend(extendedglyph)
 	if not charsline: return ([],[],usedunicodes)
+	_chars_list = chars_list.copy()
 	for idx, item in enumerate(chars_list):
 		sign = item['sign']
 		unicodes = item['unicodes']
+		# if len(unicodes) > 1:
+		# 	print('& & & & XXXGraph', sign, unicodes, name_eng, typestring)
 		types = item['types']
 		orrideunicode = item['overuni']
 		# if typestring and types and typestring not in types:
@@ -224,13 +231,14 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'display_unicode': unicodes[0],
 				'types': tp,
 				'description': CharDesc.getCharacterDescription(unicodes[0]),
-				'id': getUniqName(8)
+				# 'id': getUniqName(8)
 			}
 			resultunicodes.append(item)
 		elif unicodes and unicodes[0] and unicodes[0] not in uniqunicodes and signtypes[featuresign] in types:
 			""" знак с уникальным юникодом и локальная форма """
 			uniqunicodes.append(unicodes[0])
 			tp = None
+			# print('+++')
 			if len(unicodes) == 1:
 				tp = types.copy()
 				if typestring and typestring not in tp:
@@ -239,14 +247,17 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 			display_unicode = ''
 			if orrideunicode:
 				display_unicode = unicodes[0]
+			# tt = ''
+			# if display_unicode:
+			# 	tt = '%s ' % display_unicode
 			item = {
 				'sign': chr(int(unicodes[0], 16)),
 				'unicodes': [unicodes[0]],
 				'local': local,
 				'display_unicode': display_unicode,
 				'types': tp,
-				'description': CharDesc.getCharacterDescription(unicodes[0]),
-				'id': getUniqName(8)
+				'description': CharDesc.getCharacterDescription(unicodes[0]) #'%sLocalized form of %s' % (tt, unicodes[0]) #
+				# 'id': getUniqName(8)
 			}
 			resultunicodes.append(item)
 
@@ -269,7 +280,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					'local': localdef,
 					'types': nexttypes, #nextitem['types'],
 					'description': ', '.join(_unicodes),
-					'id': getUniqName(8),
+					# 'id': getUniqName(8),
 					'alts': [],
 
 				})
@@ -289,13 +300,14 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 						'display_unicode': _unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0]),
-						'id': getUniqName(8)
+						# 'id': getUniqName(8)
 					}
 					resultunicodes.append(item)
 				elif _unicodes and _unicodes[0] in uniqunicodes and signtypes[alternatesign] in nextitem['types'] and signtypes[featuresign] in nextitem['types']:
 					""" юникод знака уже встречался в списке, 
 						но ну него тип альтернативы и локальной формы - &a +a 
 					"""
+					# print ('@@')
 					tp = None
 					if len(_unicodes) == 1:
 						tp = nexttypes.copy()
@@ -309,13 +321,14 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 						'display_unicode': '', #_unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0]),
-						'id': getUniqName(8)
+						# 'id': getUniqName(8)
 					}
 					resultunicodes.append(item)
 				elif _unicodes and _unicodes[0] in uniqunicodes and signtypes[replacementsign] in nexttypes:
 					""" юникод знака уже встречался в списке, 
 						но ну него тип replacement и локальной формы - &a *a 
 					"""
+					# print ('&&')
 					tp = None
 					if len(_unicodes) == 1:
 						tp = nexttypes.copy()
@@ -329,7 +342,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 						'display_unicode': _unicodes[0],
 						'types': tp,
 						'description': CharDesc.getCharacterDescription(_unicodes[0]),
-						'id': getUniqName(8)
+						# 'id': getUniqName(8)
 					}
 					resultunicodes.append(item)
 			else:
@@ -341,11 +354,13 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				_local = local
 				if alts and alts[0]['unicodes'] == unicodes:
 					description = 'Localized form of %s' % ', '.join(alts[0]['unicodes'])
+					# print ('_+_', resultunicodes[-2], description)
 				elif alts and alts[0]['unicodes'] != unicodes:
 					adddesrc = ''
 					if unicodes:
 						adddesrc = '%s ' % ', '.join(unicodes)
 					description = '%sLocalized form of %s' % (adddesrc, ', '.join(alts[0]['unicodes']))
+					# print('_=_', resultunicodes[-2], description)
 			types = checkTypeSign(types, name_eng)
 			chars_list_wrap.append({
 				'sign': sign,
@@ -353,11 +368,19 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 				'local': _local,
 				'types': types,
 				'description': description,
-				'id': getUniqName(8),
+				# 'id': getUniqName(8),
 				'alts': alts,
 			})
+	for idx, item in enumerate(_chars_list):
+		sign = item['sign']
+		unicodes = item['unicodes']
+		if len(unicodes) > 1:
+			for uni in unicodes[1:]:
+				if uni not in uniqunicodes:
+					if (uni, casesign, 'alphabet') not in _extendedglyph and (uni, casesign, typestring) not in _extendedglyph:
+						_extendedglyph.append((uni, casesign, typestring))
 
-	return (chars_list_wrap, resultunicodes, uniqunicodes)
+	return (chars_list_wrap, resultunicodes, uniqunicodes, _extendedglyph)
 
 def compileLagnuages(workPath, names = None): # names = ['Avar']
 	print('*' * 60)
@@ -407,12 +430,14 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 		if os.path.exists(namefile):
 			with open(namefile, "r") as read_file:
 				data = json.load(read_file)
-			print('%s path:%s' % (name, namefile))
-
+			# print('%s path:%s' % (name, namefile))
+			print('%s' % name)
+			usedunicodes = None
 			uppercase_usedunicodes = None
 			lowercase_usedunicodes = None
 			uppercase_list_unicodes = None
 			lowercase_list_unicodes = None
+			extendedglyphs = None
 
 			glyphslists = data['glyphs_list']
 			local = data['local']
@@ -429,20 +454,22 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 				uppercaselist = glyphlist['uppercase']
 				lowercaselist = glyphlist['lowercase']
 
-				(uppercase_list,
-				 uppercase_list_unicodes,
-				 uppercase_usedunicodes) = cascadeAltsChar(CharDesc, uppercaselist,
-				                                           typestring = typelist,
-				                                           usedunicodes = uppercase_usedunicodes,
-                                                           wrapedunicodes = uppercase_list_unicodes,
-				                                           name_eng = name, local = local)
 				(lowercase_list,
 				 lowercase_list_unicodes,
-				 lowercase_usedunicodes) = cascadeAltsChar(CharDesc, lowercaselist,
+				 usedunicodes, extendedglyphs) = cascadeAltsChar(CharDesc, lowercaselist,
 				                                           typestring = typelist,
-				                                           usedunicodes = lowercase_usedunicodes,
-                                                           wrapedunicodes = lowercase_list_unicodes,
-				                                           name_eng = name, local = local)
+				                                           usedunicodes = usedunicodes,
+				                                           wrapedunicodes = lowercase_list_unicodes,
+				                                           name_eng = name, local = local, extendedglyph = extendedglyphs, casesign = 'lower')
+
+				(uppercase_list,
+				 uppercase_list_unicodes,
+				 usedunicodes, extendedglyphs) = cascadeAltsChar(CharDesc, uppercaselist,
+				                                           typestring = typelist,
+				                                           usedunicodes = usedunicodes,
+                                                           wrapedunicodes = uppercase_list_unicodes,
+				                                           name_eng = name, local = local, extendedglyph = extendedglyphs, casesign = 'upper')
+
 				outputdata['glyphs_list'].append({
 					'type': typelist,
 					'title': categories[typelist]['title'],
@@ -450,6 +477,23 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 					'uppercase': uppercase_list,
 					'lowercase': lowercase_list
 				})
+			if extendedglyphs:
+				for exglyph in extendedglyphs:
+					(uni, casesign, typestring) = exglyph
+					print ('*** Extended glyph:', name, chr(int(uni, 16)), uni, casesign, typestring )
+					extendeditem = {
+						'sign': chr(int(uni, 16)),
+						'unicodes': [uni],
+						'local': local,
+						'display_unicode': uni,
+						'types': [typestring],
+						'description': CharDesc.getCharacterDescription(uni),
+						# 'id': getUniqName(8)
+					}
+					if casesign == 'lower':
+						lowercase_list_unicodes.append( extendeditem )
+					elif casesign == 'upper':
+						uppercase_list_unicodes.append( extendeditem )
 			if makeCharSet:
 				outputdata['glyphs_list'].append({
 					'type': 'charset',
@@ -468,52 +512,62 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 
 
 def filterCharacters(name, local, charlist, unicodedlist, puazonelist, nonunicodedlist):
-	# unicodedlist = {}
-	# nonunicodedlist = {}
-	# puazonelist = {}
-
 	for item in charlist:
 		sign = item['sign']
 		unicodes = item['unicodes']
 		display_unicode = item['display_unicode']
+		_local = item['local']
 
 		types = item['types']
 		if not types:
 			types = []
 		description = item['description']
 
+		hide = ''
+		if 'italic' in types:
+			# print ('ITA:', name, sign, _local, unicodes)
+			hide = 'straight'
+		elif 'straight' in types:
+			# print('STR:',name, sign, _local, unicodes)
+			hide = 'italic'
+		else:
+			hide = ''
+			# print ('*')
+
 		if len(unicodes) > 1:
 			print('*** TOO MUCH UNICODES')
 			print(unicodes)
 		elif len(unicodes) < 1:
 			print('*** NO UNICODES')
-			print(unicodes[0], sign)
+			print(unicodes, sign)
 		elif not unicodes:
 			print('*** NULL UNICODE')
-			print(unicodes[0], sign)
+			print(unicodes, sign)
 
 		if not display_unicode:
-			if '%s.%s' % (unicodes[0], local) not in nonunicodedlist:
-				nonunicodedlist['%s.%s' % (unicodes[0], local)] = dict(
+			if '%s.%s' % (unicodes[0], _local) not in nonunicodedlist:
+				nonunicodedlist['%s.%s' % (unicodes[0], _local)] = dict(
 					sign = sign,
 					unicodes = [unicodes[0]],
-					local = local,
+					local = _local,
 					display_unicode = display_unicode,
 					description = description,
+					hide = hide,
 					languages = [dict(name = name, types = types)],
 					id = getUniqName(8)
 				)
 			else:
-				nonunicodedlist['%s.%s' % (unicodes[0], local)]['languages'].append(dict(name = name, types = types))
+				nonunicodedlist['%s.%s' % (unicodes[0], _local)]['languages'].append(dict(name = name, types = types))
 
 		elif display_unicode.startswith('F'):
 			if unicodes[0] not in puazonelist:
 				puazonelist[unicodes[0]] = dict(
 					sign = sign,
 					unicodes = [unicodes[0]],
-					local = local,
+					local = _local,
 					display_unicode = display_unicode,
 					description = description,
+					hide = hide,
 					languages = [dict(name = name, types = types)],
 					id = getUniqName(8)
 				)
@@ -524,9 +578,10 @@ def filterCharacters(name, local, charlist, unicodedlist, puazonelist, nonunicod
 				unicodedlist[unicodes[0]] = dict(
 					sign = sign,
 					unicodes = [unicodes[0]],
-					local = local,
+					local = _local,
 					display_unicode = display_unicode,
 					description = description,
+					hide = hide,
 					languages = [dict(name = name, types = types)],
 					id = getUniqName(8)
 				)
@@ -621,24 +676,28 @@ def makeMainCharactersSet(workPath):
 				unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC = filterCharacters(name, local, uppercase_unicodes_list, unicodedlist_UC, puazonelist_UC, nonunicodedlist_UC)
 				unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC = filterCharacters(name, local, lowercase_unicodes_list, unicodedlist_LC, puazonelist_LC, nonunicodedlist_LC)
 
-	UC_unicoded_list = sortGlyphsList(unicodedlist_UC, names, sortOrder = SortOrderCyrl)
-	UC_pua_list = sortGlyphsList(puazonelist_UC, names, sortOrder = SortOrderCyrl)
-	UC_nonunicoded_list = sortGlyphsList(nonunicodedlist_UC, names, sortOrder = SortOrderCyrl)
-
-	LC_unicoded_list = sortGlyphsList(unicodedlist_LC, names, sortOrder = SortOrderCyrl)
-	LC_pua_list = sortGlyphsList(puazonelist_LC, names, sortOrder = SortOrderCyrl)
-	LC_nonunicoded_list = sortGlyphsList(nonunicodedlist_LC, names, sortOrder = SortOrderCyrl)
+	UC_unicoded_list = sortGlyphsList({ **unicodedlist_UC, **puazonelist_UC, **nonunicodedlist_UC}, names, sortOrder = SortOrderCyrl)
+	# UC_pua_list = sortGlyphsList(puazonelist_UC, names, sortOrder = SortOrderCyrl)
+	# UC_nonunicoded_list = sortGlyphsList(nonunicodedlist_UC, names, sortOrder = SortOrderCyrl)
+	UC_sorted_list = sortGlyphsList({ **unicodedlist_UC, **puazonelist_UC, **nonunicodedlist_UC}, names)
+	LC_unicoded_list = sortGlyphsList({ **unicodedlist_LC, **puazonelist_LC, **nonunicodedlist_LC}, names, sortOrder = SortOrderCyrl)
+	LC_sorted_list = sortGlyphsList({ **unicodedlist_LC, **puazonelist_LC, **nonunicodedlist_LC}, names)
+	# LC_pua_list = sortGlyphsList(puazonelist_LC, names, sortOrder = SortOrderCyrl)
+	# LC_nonunicoded_list = sortGlyphsList(nonunicodedlist_LC, names, sortOrder = SortOrderCyrl)
 
 
 	dataset = dict(
 		uppercase_unicodes_list = UC_unicoded_list,
 		lowercase_unicodes_list = LC_unicoded_list,
 
-		uppercase_puazone_list = UC_pua_list,
-		lowercase_puazone_list = LC_pua_list,
+		uppercase_puazone_list = [], # UC_pua_list,
+		lowercase_puazone_list = [], # LC_pua_list,
 
-		uppercase_nonunicode_list = UC_nonunicoded_list,
-		lowercase_nonunicode_list = LC_nonunicoded_list,
+		uppercase_nonunicode_list = [], # UC_nonunicoded_list,
+		lowercase_nonunicode_list = [], # LC_nonunicoded_list,
+
+		uppercase_sorted_by_unicodes = UC_sorted_list,
+		lowercase_sorted_by_unicodes = LC_sorted_list,
 	)
 	outputJSONfile = os.path.join(basePath, 'site', 'cyrillic_characters_lib.json')
 	indent = None

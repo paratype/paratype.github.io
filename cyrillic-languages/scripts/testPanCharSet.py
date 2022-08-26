@@ -53,6 +53,8 @@ def testCharactersSet(workPath):
 	nonunicodedlist_LC = {}
 	puazonelist_LC = {}
 	globaltypes = []
+	emptydescriptions_upper = {}
+	emptydescriptions_lower = {}
 	for name in names:
 		mainfile = os.path.join(libraryPath, '%s.json' % name)
 		inputJSONfile = os.path.join(basePath, 'site', 'baselib', '%s.json' % name)
@@ -89,6 +91,9 @@ def testCharactersSet(workPath):
 							print(item['sign'], item['types'])
 					else:
 						print('&&&', item['sign'], item['types'], name)
+					if not item['description']:
+						emptydescriptions_upper[item['unicodes'][0]] = ( item['sign'], name )
+						# print('empty description', item['sign'], item['unicodes'], item['types'], name)
 
 				# globaltypes.extend(checkType(uppercase_unicodes_list, globaltypes, name))
 				# globaltypes.extend(checkType(lowercase_unicodes_list, globaltypes, name))
@@ -101,8 +106,26 @@ def testCharactersSet(workPath):
 							print(item['sign'], item['types'])
 					else:
 						print ('&&&',item['sign'], item['types'], name)
+					if not item['description']:
+						emptydescriptions_lower[item['unicodes'][0]] = (item['sign'], name)
+						# print('empty description', item['sign'], item['unicodes'], item['types'], name)
 
 	print ('All types:\n%s' % ('\n'.join(globaltypes)))
+	if emptydescriptions_upper or emptydescriptions_lower:
+		print ('Empty descritions Upper:')
+		for k,v in emptydescriptions_upper.items():
+			print ('%s = %s = CYRILLIC CAPITAL LETTER %s' % (v[0], k, v[1]))
+		print('Empty descritions Lower:')
+		for k,v in emptydescriptions_lower.items():
+			print ('%s = %s = CYRILLIC SMALL LETTER %s' % (v[0], k, v[1]))
+
+		print ('Empty descritions Upper:')
+		for k,v in emptydescriptions_upper.items():
+			print ('%s\tCYRILLIC CAPITAL LETTER %s' % (k, v[0]))
+		print('Empty descritions Lower:')
+		for k,v in emptydescriptions_lower.items():
+			print ('%s\tCYRILLIC SMALL LETTER %s' % (k, v[0]))
+
 
 
 def main (names=None):

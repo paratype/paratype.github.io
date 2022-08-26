@@ -4,8 +4,9 @@ import json
 import os.path
 
 
-descriptionsfile = 'langdesc-eng_e.txt'
+descriptionsfile = 'langdesc-eng_e-25.08.2022.txt'
 
+applyChanges = True
 workPath = os.path.dirname(__file__)
 
 libraryPath = 'library'  # langlib
@@ -90,19 +91,13 @@ for item in strukt:
 		_data['alt_names_eng'] = data['alt_names_eng']
 		_data['description_eng'] = item['description_eng']
 		_data['description_rus'] = data['description_rus']
-		_data['uppercase_alphabet'] = data['uppercase_alphabet']
-		_data['lowercase_alphabet'] = data['lowercase_alphabet']
-		_data['uppercase_dialect'] = data['uppercase_dialect']
-		_data['lowercase_dialect'] = data['lowercase_dialect']
-		_data['uppercase_historic'] = data['uppercase_historic']
-		_data['lowercase_historic'] = data['lowercase_historic']
-		_data['uppercase_lexic'] = data['uppercase_lexic']
-		_data['lowercase_lexic'] = data['lowercase_lexic']
+		_data['glyphs_list'] = data['glyphs_list']
 		for k,v in _data.items():
 			print(k,v)
 		outputJSONfile = namefile
-		with open(outputJSONfile, "w") as write_file:
-			json.dump(_data, write_file, indent = 4, ensure_ascii = False)
+		if applyChanges:
+			with open(outputJSONfile, "w") as write_file:
+				json.dump(_data, write_file, indent = 4, ensure_ascii = False)
 
 	else:
 		errpath.append((name_eng, pathjson))
