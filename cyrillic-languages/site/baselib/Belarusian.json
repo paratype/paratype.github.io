@@ -76,7 +76,34 @@
                         "alphabet"
                     ],
                     "description": "0414",
-                    "alts": []
+                    "alts": [
+                        {
+                            "sign": "Дж",
+                            "unicodes": [
+                                "0414",
+                                "0436"
+                            ],
+                            "local": "ru",
+                            "types": [
+                                "digraph"
+                            ],
+                            "description": "0414, 0436",
+                            "alts": []
+                        },
+                        {
+                            "sign": "Дз",
+                            "unicodes": [
+                                "0414",
+                                "0437"
+                            ],
+                            "local": "ru",
+                            "types": [
+                                "digraph"
+                            ],
+                            "description": "0414, 0437",
+                            "alts": []
+                        }
+                    ]
                 },
                 {
                     "sign": "Е",
@@ -486,7 +513,34 @@
                         "alphabet"
                     ],
                     "description": "0434",
-                    "alts": []
+                    "alts": [
+                        {
+                            "sign": "дж",
+                            "unicodes": [
+                                "0434",
+                                "0436"
+                            ],
+                            "local": "ru",
+                            "types": [
+                                "digraph"
+                            ],
+                            "description": "0434, 0436",
+                            "alts": []
+                        },
+                        {
+                            "sign": "дз",
+                            "unicodes": [
+                                "0434",
+                                "0437"
+                            ],
+                            "local": "ru",
+                            "types": [
+                                "digraph"
+                            ],
+                            "description": "0434, 0437",
+                            "alts": []
+                        }
+                    ]
                 },
                 {
                     "sign": "е",
@@ -810,67 +864,6 @@
                         "alphabet"
                     ],
                     "description": "044F",
-                    "alts": []
-                }
-            ]
-        },
-        {
-            "type": "digraph",
-            "title": "Digraph",
-            "show_unicodes": false,
-            "uppercase": [
-                {
-                    "sign": "Дж",
-                    "unicodes": [
-                        "0414",
-                        "0436"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "digraph"
-                    ],
-                    "description": "0414, 0436",
-                    "alts": []
-                },
-                {
-                    "sign": "Дз",
-                    "unicodes": [
-                        "0414",
-                        "0437"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "digraph"
-                    ],
-                    "description": "0414, 0437",
-                    "alts": []
-                }
-            ],
-            "lowercase": [
-                {
-                    "sign": "дж",
-                    "unicodes": [
-                        "0434",
-                        "0436"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "digraph"
-                    ],
-                    "description": "0434, 0436",
-                    "alts": []
-                },
-                {
-                    "sign": "дз",
-                    "unicodes": [
-                        "0434",
-                        "0437"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "digraph"
-                    ],
-                    "description": "0434, 0437",
                     "alts": []
                 }
             ]

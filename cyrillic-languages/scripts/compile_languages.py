@@ -7,7 +7,7 @@ import string, re
 
 
 
-marks = ['*', '$', '#', '@', '(', ')', '[', ']', '+', '=', '&', '.alt', '.ita', '.str']
+marks = ['*', '$', '#', '@', '(', ')', '[', ']', '+', '=', '&', ':', '.alt', '.ita', '.str']
 
 dialectsign = '@'
 historicsign = '#'
@@ -16,7 +16,7 @@ alternatesign = '+'
 equivalentsign = '='
 featuresign = '&'
 replacementsign = '*'
-digraph = ':'
+digraphsign = ':'
 alphabet = '<'
 italiconly = '.ita'
 straightonly = '.str'
@@ -26,7 +26,7 @@ signtypes = {
 	dialectsign : 'dialect',
 	historicsign : 'historic',
 	lexicsign : 'extended',
-	digraph : 'digraph',
+	digraphsign : 'digraph',
 	alternatesign : 'alternatesign',
 	equivalentsign : 'equivalentsign',
 	featuresign : 'localform',
@@ -264,8 +264,8 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 		for nextitem in chars_list[idx + 1:]:
 			""" проверяем следующий по порядку знак """
 			_types = nextitem['types']
-			if signtypes[alternatesign] in _types or signtypes[equivalentsign] in _types:
-				""" следующий знак - альтернатива или эквивалент """
+			if signtypes[alternatesign] in _types or signtypes[equivalentsign] in _types or signtypes[digraphsign] in _types:
+				""" следующий знак - альтернатива или эквивалент или диграф"""
 				_unicodes = nextitem['unicodes']
 				nexttypes = nextitem['types'].copy()
 				if signtypes[alternatesign] in nexttypes and signtypes[featuresign] in nexttypes:
@@ -347,7 +347,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 					resultunicodes.append(item)
 			else:
 				break
-		if signtypes[alternatesign] not in types and signtypes[equivalentsign] not in types:
+		if signtypes[alternatesign] not in types and signtypes[equivalentsign] not in types and signtypes[digraphsign] not in types:
 			description = ', '.join(unicodes)
 			_local = localdef
 			if signtypes[featuresign] in types:
