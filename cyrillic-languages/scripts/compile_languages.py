@@ -382,6 +382,35 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 
 	return (chars_list_wrap, resultunicodes, uniqunicodes, _extendedglyph)
 
+def checkSortOrderDigraphs(namelang, typelist, glyphslist):
+	names = 'Adyge Aghul Dargwa Kabardian Kumyk Lak Lezgin Rutul Tabasaran Tat Tsakhur'.split(' ')
+	# txt = glyphslist
+	exglyphs = 'Ё ё Э э'.split(' ')
+	if namelang not in names: return
+	if typelist != 'alphabet': return
+	inputtxt = []
+	for item in glyphslist:
+		# if item != 'Ё' and item != 'ё':
+		if item not in exglyphs:
+			inputtxt.append(item)
+	outputtxt = []
+	for item in sorted(glyphslist):
+		# if item != 'Ё' and item != 'ё':
+		if item not in exglyphs:
+			outputtxt.append(item)
+	tttin = ''
+	tttout = ''
+	for idx, item in enumerate(inputtxt):
+		# if item != 'Ё' and item != 'ё':
+		# print (item, outputtxt[idx])
+		if item != outputtxt[idx]:
+			tttin += item + ' '
+			tttout += outputtxt[idx] + ' '
+	if tttin and tttout:
+		print ('+++', namelang)
+		print(tttin)
+		print(tttout)
+
 def compileLagnuages(workPath, names = None): # names = ['Avar']
 	print('*' * 60)
 	print('Started compiling the language library')
@@ -453,6 +482,9 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 				typelist = glyphlist['type']
 				uppercaselist = glyphlist['uppercase']
 				lowercaselist = glyphlist['lowercase']
+
+				checkSortOrderDigraphs(name, typelist, uppercaselist.split(' '))
+				checkSortOrderDigraphs(name, typelist, lowercaselist.split(' '))
 
 				(lowercase_list,
 				 lowercase_list_unicodes,
