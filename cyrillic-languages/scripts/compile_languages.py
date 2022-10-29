@@ -383,7 +383,7 @@ def cascadeAltsChar(CharDesc, charsline, typestring = None, usedunicodes = None,
 	return (chars_list_wrap, resultunicodes, uniqunicodes, _extendedglyph)
 
 def checkSortOrderDigraphs(namelang, typelist, glyphslist):
-	names = 'Adyge Aghul Dargwa Kabardian Kumyk Lak Lezgin Rutul Tabasaran Tat Tsakhur'.split(' ')
+	names = 'Adyge Aghul Dargwa Kabardian Kumyk Lak Lezgin Rutul Tabasaran Tat Tsakhur Kabardino-Cirkassian'.split(' ')
 	# txt = glyphslist
 	exglyphs = 'Ё ё Э э'.split(' ')
 	if namelang not in names: return
