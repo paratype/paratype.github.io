@@ -411,6 +411,25 @@ def checkSortOrderDigraphs(namelang, typelist, glyphslist):
 		print(tttin)
 		print(tttout)
 
+def checkExtendedGlyphs(uni, casesign, typestring):
+	ignoreGlyphsList = [
+		{
+			'unicodesign': '04CF',
+			'casesign': 'lower',
+			'typestring': 'alphabet'
+		},
+		{
+			'unicodesign': '04CF',
+			'casesign': 'upper',
+			'typestring': 'alphabet'
+		},
+	]
+	for item in ignoreGlyphsList:
+		if uni == item['unicodesign'] and casesign == item['casesign'] and typestring == item['typestring']:
+			return False
+	return True
+
+
 def compileLagnuages(workPath, names = None): # names = ['Avar']
 	print('*' * 60)
 	print('Started compiling the language library')
@@ -483,8 +502,8 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 				uppercaselist = glyphlist['uppercase']
 				lowercaselist = glyphlist['lowercase']
 
-				checkSortOrderDigraphs(name, typelist, uppercaselist.split(' '))
-				checkSortOrderDigraphs(name, typelist, lowercaselist.split(' '))
+				# checkSortOrderDigraphs(name, typelist, uppercaselist.split(' '))
+				# checkSortOrderDigraphs(name, typelist, lowercaselist.split(' '))
 
 				(lowercase_list,
 				 lowercase_list_unicodes,
@@ -512,20 +531,21 @@ def compileLagnuages(workPath, names = None): # names = ['Avar']
 			if extendedglyphs:
 				for exglyph in extendedglyphs:
 					(uni, casesign, typestring) = exglyph
-					print ('*** Extended glyph:', name, chr(int(uni, 16)), uni, casesign, typestring )
-					extendeditem = {
-						'sign': chr(int(uni, 16)),
-						'unicodes': [uni],
-						'local': local,
-						'display_unicode': uni,
-						'types': [typestring],
-						'description': CharDesc.getCharacterDescription(uni),
-						# 'id': getUniqName(8)
-					}
-					if casesign == 'lower':
-						lowercase_list_unicodes.append( extendeditem )
-					elif casesign == 'upper':
-						uppercase_list_unicodes.append( extendeditem )
+					if checkExtendedGlyphs(uni, casesign, typestring):
+						print ('*** Extended glyph:', name, chr(int(uni, 16)), uni, casesign, typestring )
+						extendeditem = {
+							'sign': chr(int(uni, 16)),
+							'unicodes': [uni],
+							'local': local,
+							'display_unicode': uni,
+							'types': [typestring],
+							'description': CharDesc.getCharacterDescription(uni),
+							# 'id': getUniqName(8)
+						}
+						if casesign == 'lower':
+							lowercase_list_unicodes.append( extendeditem )
+						elif casesign == 'upper':
+							uppercase_list_unicodes.append( extendeditem )
 			if makeCharSet:
 				outputdata['glyphs_list'].append({
 					'type': 'charset',
