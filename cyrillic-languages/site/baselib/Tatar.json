@@ -1,5 +1,5 @@
 {
-    "name_eng": "Turkmen (Cyr)",
+    "name_eng": "Tatar",
     "glyphs_list": [
         {
             "type": "alphabet",
@@ -16,6 +16,18 @@
                         "alphabet"
                     ],
                     "description": "0410",
+                    "alts": []
+                },
+                {
+                    "sign": "Ә",
+                    "unicodes": [
+                        "04D8"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "04D8",
                     "alts": []
                 },
                 {
@@ -331,6 +343,18 @@
                     "alts": []
                 },
                 {
+                    "sign": "Һ",
+                    "unicodes": [
+                        "04BA"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "04BA",
+                    "alts": []
+                },
+                {
                     "sign": "Ц",
                     "unicodes": [
                         "0426"
@@ -427,18 +451,6 @@
                     "alts": []
                 },
                 {
-                    "sign": "Ә",
-                    "unicodes": [
-                        "04D8"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04D8",
-                    "alts": []
-                },
-                {
                     "sign": "Ю",
                     "unicodes": [
                         "042E"
@@ -474,6 +486,18 @@
                         "alphabet"
                     ],
                     "description": "0430",
+                    "alts": []
+                },
+                {
+                    "sign": "ә",
+                    "unicodes": [
+                        "04D9"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "04D9",
                     "alts": []
                 },
                 {
@@ -789,6 +813,18 @@
                     "alts": []
                 },
                 {
+                    "sign": "һ",
+                    "unicodes": [
+                        "04BB"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "04BB",
+                    "alts": []
+                },
+                {
                     "sign": "ц",
                     "unicodes": [
                         "0446"
@@ -885,18 +921,6 @@
                     "alts": []
                 },
                 {
-                    "sign": "ә",
-                    "unicodes": [
-                        "04D9"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04D9",
-                    "alts": []
-                },
-                {
                     "sign": "ю",
                     "unicodes": [
                         "044E"
@@ -923,6 +947,87 @@
             ]
         },
         {
+            "type": "consideration",
+            "title": "Signs under consideration",
+            "show_unicodes": false,
+            "uppercase": [
+                {
+                    "sign": "Ғ",
+                    "unicodes": [
+                        "0492"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "0492",
+                    "alts": []
+                },
+                {
+                    "sign": "Қ",
+                    "unicodes": [
+                        "049A"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "049A",
+                    "alts": []
+                },
+                {
+                    "sign": "Ў",
+                    "unicodes": [
+                        "040E"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "040E",
+                    "alts": []
+                }
+            ],
+            "lowercase": [
+                {
+                    "sign": "ғ",
+                    "unicodes": [
+                        "0493"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "0493",
+                    "alts": []
+                },
+                {
+                    "sign": "қ",
+                    "unicodes": [
+                        "049B"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "049B",
+                    "alts": []
+                },
+                {
+                    "sign": "ў",
+                    "unicodes": [
+                        "045E"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "045E",
+                    "alts": []
+                }
+            ]
+        },
+        {
             "type": "charset",
             "title": "Character Set",
             "show_unicodes": true,
@@ -938,6 +1043,18 @@
                         "alphabet"
                     ],
                     "description": "Cyrillic Capital Letter A"
+                },
+                {
+                    "sign": "Ә",
+                    "unicodes": [
+                        "04D8"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04D8",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "Cyrillic Capital Letter Schwa"
                 },
                 {
                     "sign": "Б",
@@ -1252,6 +1369,18 @@
                     "description": "Cyrillic Capital Letter Ha"
                 },
                 {
+                    "sign": "Һ",
+                    "unicodes": [
+                        "04BA"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04BA",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "Cyrillic Capital Letter Shha"
+                },
+                {
                     "sign": "Ц",
                     "unicodes": [
                         "0426"
@@ -1348,18 +1477,6 @@
                     "description": "Cyrillic Capital Letter E"
                 },
                 {
-                    "sign": "Ә",
-                    "unicodes": [
-                        "04D8"
-                    ],
-                    "local": "ru",
-                    "display_unicode": "04D8",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "Cyrillic Capital Letter Schwa"
-                },
-                {
                     "sign": "Ю",
                     "unicodes": [
                         "042E"
@@ -1382,6 +1499,42 @@
                         "alphabet"
                     ],
                     "description": "Cyrillic Capital Letter Ya"
+                },
+                {
+                    "sign": "Ғ",
+                    "unicodes": [
+                        "0492"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "0492",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Capital Letter Ghe With Stroke"
+                },
+                {
+                    "sign": "Қ",
+                    "unicodes": [
+                        "049A"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "049A",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Capital Letter Ka With Descender"
+                },
+                {
+                    "sign": "Ў",
+                    "unicodes": [
+                        "040E"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "040E",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Capital Letter Short U"
                 }
             ],
             "lowercase": [
@@ -1396,6 +1549,18 @@
                         "alphabet"
                     ],
                     "description": "Cyrillic Small Letter A"
+                },
+                {
+                    "sign": "ә",
+                    "unicodes": [
+                        "04D9"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04D9",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "Cyrillic Small Letter Schwa"
                 },
                 {
                     "sign": "б",
@@ -1710,6 +1875,18 @@
                     "description": "Cyrillic Small Letter Ha"
                 },
                 {
+                    "sign": "һ",
+                    "unicodes": [
+                        "04BB"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04BB",
+                    "types": [
+                        "alphabet"
+                    ],
+                    "description": "Cyrillic Small Letter Shha"
+                },
+                {
                     "sign": "ц",
                     "unicodes": [
                         "0446"
@@ -1806,18 +1983,6 @@
                     "description": "Cyrillic Small Letter E"
                 },
                 {
-                    "sign": "ә",
-                    "unicodes": [
-                        "04D9"
-                    ],
-                    "local": "ru",
-                    "display_unicode": "04D9",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "Cyrillic Small Letter Schwa"
-                },
-                {
                     "sign": "ю",
                     "unicodes": [
                         "044E"
@@ -1840,6 +2005,42 @@
                         "alphabet"
                     ],
                     "description": "Cyrillic Small Letter Ya"
+                },
+                {
+                    "sign": "ғ",
+                    "unicodes": [
+                        "0493"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "0493",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Small Letter Ghe With Stroke"
+                },
+                {
+                    "sign": "қ",
+                    "unicodes": [
+                        "049B"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "049B",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Small Letter Ka With Descender"
+                },
+                {
+                    "sign": "ў",
+                    "unicodes": [
+                        "045E"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "045E",
+                    "types": [
+                        "consideration"
+                    ],
+                    "description": "Cyrillic Small Letter Short U"
                 }
             ]
         }
