@@ -42,6 +42,7 @@ signtypes = {
 libraryMainFile = 'cyrillic_library.json'
 libraryGlyphsList = 'glyphs_list_categories.json'
 sortOrderFile = 'sortorder_cyrillic.txt'
+outputGeneralGlyphsList = 'cyrillic_characters_lib.json'
 unicodeLibFiles = ['unicode14.txt', 'PT_PUA_unicodes-descritions.txt']
 
 DEVELOPMENT = True
@@ -95,7 +96,7 @@ class CharacherDescription(object):
 			return ''
 
 
-class PanCyrillicOrderSorter(object):
+class laguagesOrderSorter(object):
 	def __init__(self, sortorderfile):
 		self.missigChars = {}
 		print ('Initializing sorting keys..')
@@ -680,7 +681,7 @@ def makeMainCharactersSet(workPath):
 	sortOrderFilePath = os.path.join(basePath, sortOrderFile)
 	SortOrderCyrl = None
 	if os.path.exists(sortOrderFilePath):
-		SortOrderCyrl = PanCyrillicOrderSorter(sortOrderFilePath)
+		SortOrderCyrl = laguagesOrderSorter(sortOrderFilePath)
 	else:
 		print('SortOrder file not found: %s' % sortOrderFilePath)
 
@@ -751,7 +752,7 @@ def makeMainCharactersSet(workPath):
 		uppercase_sorted_by_unicodes = UC_sorted_list,
 		lowercase_sorted_by_unicodes = LC_sorted_list,
 	)
-	outputJSONfile = os.path.join(basePath, 'site', 'cyrillic_characters_lib.json')
+	outputJSONfile = os.path.join(basePath, 'site', outputGeneralGlyphsList)
 	indent = None
 	if DEVELOPMENT:
 		indent = 4
