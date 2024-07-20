@@ -615,31 +615,6 @@
                     "alts": []
                 },
                 {
-                    "sign": "Ҵ",
-                    "unicodes": [
-                        "04B4"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04B4",
-                    "alts": []
-                },
-                {
-                    "sign": "Ҵә",
-                    "unicodes": [
-                        "04B4",
-                        "04D9"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04B4, 04D9",
-                    "alts": []
-                },
-                {
                     "sign": "Ч",
                     "unicodes": [
                         "0427"
@@ -1409,31 +1384,6 @@
                     "alts": []
                 },
                 {
-                    "sign": "ҵ",
-                    "unicodes": [
-                        "04B5"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04B5",
-                    "alts": []
-                },
-                {
-                    "sign": "ҵә",
-                    "unicodes": [
-                        "04B5",
-                        "04D9"
-                    ],
-                    "local": "ru",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "04B5, 04D9",
-                    "alts": []
-                },
-                {
                     "sign": "ч",
                     "unicodes": [
                         "0447"
@@ -1954,6 +1904,41 @@
                     ],
                     "description": "0425, 0443",
                     "alts": []
+                },
+                {
+                    "sign": "Ҵ",
+                    "unicodes": [
+                        "04B4"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "04B4",
+                    "alts": []
+                },
+                {
+                    "sign": "Ҵә",
+                    "unicodes": [
+                        "04B4",
+                        "04D9"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "04B4, 04D9",
+                    "alts": []
+                },
+                {
+                    "sign": "",
+                    "unicodes": [],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "",
+                    "alts": []
                 }
             ],
             "lowercase": [
@@ -2070,6 +2055,41 @@
                         "historic"
                     ],
                     "description": "0445, 0443",
+                    "alts": []
+                },
+                {
+                    "sign": "ҵ",
+                    "unicodes": [
+                        "04B5"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "04B5",
+                    "alts": []
+                },
+                {
+                    "sign": "ҵә",
+                    "unicodes": [
+                        "04B5",
+                        "04D9"
+                    ],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "04B5, 04D9",
+                    "alts": []
+                },
+                {
+                    "sign": "",
+                    "unicodes": [],
+                    "local": "ru",
+                    "types": [
+                        "historic"
+                    ],
+                    "description": "",
                     "alts": []
                 }
             ]
@@ -2485,18 +2505,6 @@
                     "description": "Cyrillic Capital Letter Tse"
                 },
                 {
-                    "sign": "Ҵ",
-                    "unicodes": [
-                        "04B4"
-                    ],
-                    "local": "ru",
-                    "display_unicode": "04B4",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "Cyrillic Capital Ligature Te Tse"
-                },
-                {
                     "sign": "Ч",
                     "unicodes": [
                         "0427"
@@ -2639,6 +2647,16 @@
                         "dialect"
                     ],
                     "description": "Cyrillic Capital Letter Es With Descender"
+                },
+                {
+                    "sign": "Ҵ",
+                    "unicodes": [
+                        "04B4"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04B4",
+                    "types": null,
+                    "description": "Cyrillic Capital Ligature Te Tse"
                 },
                 {
                     "sign": "Ҕ",
@@ -3051,18 +3069,6 @@
                     "description": "Cyrillic Small Letter Tse"
                 },
                 {
-                    "sign": "ҵ",
-                    "unicodes": [
-                        "04B5"
-                    ],
-                    "local": "ru",
-                    "display_unicode": "04B5",
-                    "types": [
-                        "alphabet"
-                    ],
-                    "description": "Cyrillic Small Ligature Te Tse"
-                },
-                {
                     "sign": "ч",
                     "unicodes": [
                         "0447"
@@ -3205,6 +3211,16 @@
                         "dialect"
                     ],
                     "description": "Cyrillic Small Letter Es With Descender"
+                },
+                {
+                    "sign": "ҵ",
+                    "unicodes": [
+                        "04B5"
+                    ],
+                    "local": "ru",
+                    "display_unicode": "04B5",
+                    "types": null,
+                    "description": "Cyrillic Small Ligature Te Tse"
                 },
                 {
                     "sign": "ҕ",
