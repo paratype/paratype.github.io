@@ -3,7 +3,8 @@ import sys
 import json
 import os.path
 import random
-import string, re
+import string
+import re
 
 
 
