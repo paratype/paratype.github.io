@@ -1,0 +1,46 @@
+{
+    "name_eng": "Avar",
+    "name_rus": "Аварский",
+    "local": "ru",
+    "language_group_eng": [
+        "North Caucasian",
+        "East Caucasian",
+        "Dagestan"
+    ],
+    "language_group_rus": [
+        "Северокавказские языки",
+        "Восточнокавказские языки",
+        "Дагестанские языки"
+    ],
+    "alt_names_eng": [
+        "Avar",
+        "Avaro",
+        "Bolmac",
+        "Khundzuri",
+        "Maarul Dagestani"
+    ],
+    "description_eng": "The modern Cyrillic-based Avar alphabet was introduced in 1938. In its composition, in addition to the letters of the Russian alphabet, 24 specific combinations, which include the sign 'palochka'. The letter Ы is used only in words borrowed from the Russian language.\n",
+    "description_rus": "Современный аварский алфавит на основе кириллицы был введен в 1938 году. В его составе, помимо букв русского алфавита, 24 специфических сочетания, в которые входит знак «палочка». Буква Ы применяется только в словах, заимствованных из русского языка.",
+    "glyphs_list": [
+        {
+            "type": "alphabet",
+            "uppercase": "А Б В Г Гъ Гь Гӏ Д Е Ё Ж З И Й К Кк Къ Кь Кӏ Кӏкӏ Л Лъ Лълъ М Н О П Р С Сс Т Тӏ У Ф Х Хх Хъ Хь Хӏ Ц Цц Цӏ Цӏцӏ Ч Чч Чӏ Чӏчӏ Ш Щ Ъ Ы Ь Э Ю Я Ӏ",
+            "lowercase": "а б в г гъ гь гӏ д е ё ж з и й к кк къ кь кӏ кӏкӏ л лъ лълъ м н о п р с сс т тӏ у ф х хх хъ хь хӏ ц цц цӏ цӏцӏ ч чч чӏ чӏчӏ ш щ ъ ы ь э ю я ӏ"
+        },
+        {
+            "type": "extended",
+            "uppercase": "          !F86F !F872 !F875 !F878 !F87B !F87E",
+            "lowercase": "          !F870 !F873 !F876 !F879 !F87C !F87F"
+        },
+        {
+            "type": "consideration",
+            "uppercase": "Лӏ Пӏ",
+            "lowercase": "лӏ пӏ"
+        },
+        {
+            "type": "historic",
+            "uppercase": "Тл",
+            "lowercase": "тл"
+        }
+    ]
+}
