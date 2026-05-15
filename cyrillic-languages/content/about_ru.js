@@ -18,6 +18,9 @@ window.__APP_HTML.about_ru = `
 <p class="langinfo_next">Суммарный кириллический алфавит, поддерживающий все&nbsp;Языки в&nbsp;проекте, можно найти в&nbsp;разделе «<span class="aspan" data-action="pancyr">Вся&nbsp;кириллица</span>».</p>
 <p class="langinfo_next">Проект будет полезен дизайнерам шрифта и&nbsp;всем интересующимся кириллицей в&nbsp;качестве справочного материала.</p>
 <p class="langinfo_next">В&nbsp;проекте мы&nbsp;использовали специальную версию шрифтов <a href="https://github.com/paratype/paratype.github.io/tree/main/cyrillic-languages/fonts/web" target="top">PT&nbsp;Sans&nbsp;Expert и&nbsp;PT&nbsp;Serif&nbsp;Expert</a> (Paratype, 2022, OFL).</p>
-<p class="langinfo_next">Будем рады вашим <a href="mailto:fonts@paratype.com">комментариям</a>. Они помогут проекту развиваться.</p>
+<p class="langinfo_next">Будем рады вашим <a href="mailto:info@paratype.net">комментариям</a>. Они помогут проекту развиваться.</p>
+<p class="langinfo_next redtext"><br />Участие в проекте </p>
+<p class="langinfo_next">Если вы хотите исправить или расширить языковую запись — исправить отсутствующий символ, обновить описание, уточнить алфавит — смотрите полные инструкции в <a href="https://github.com/paratype-git/cyrillic-languages" target="top">нашем репозитории на GitHub</a>.</p>
+<p class="langinfo_next">Примечания о том, как запускается конвейер обработки, как добавить новый язык, как поддерживать порядок сортировки и таблицы описаний Unicode — находятся <a href="https://github.com/paratype-git/cyrillic-languages/blob/master/docs/MAINTAINING.md" target="top">здесь</a>.</p>
 <p class="langinfo">&nbsp;</p>
 `;

@@ -18,6 +18,9 @@ window.__APP_HTML.about_en = `
 <p class="langinfo_next">The aggregated Cyrillic alphabet that supports all&nbsp;Languages in&nbsp;this project can&nbsp;be&nbsp;found on&nbsp;the&nbsp;<span class="aspan" data-action="pancyr">Pan-Cyrillic Character&nbsp;set</span>&nbsp;page.</p>
 <p class="langinfo_next">As a&nbsp;reference material, this project can be&nbsp;useful for font designers and anyone interested in&nbsp;Cyrillic.</p>
 <p class="langinfo_next">The project uses a&nbsp;special version of the <a href="https://github.com/paratype/paratype.github.io/tree/main/cyrillic-languages/fonts/web" target="top">PT Sans Expert and PT Serif Expert</a> fonts (Paratype, 2022, OFL).</p>
-<p class="langinfo_next">We’ll be&nbsp;grateful <a href="mailto:fonts@paratype.com">for your comments</a>. They will help us&nbsp;make the&nbsp;project better.</p>
+<p class="langinfo_next">We’ll be&nbsp;grateful <a href="mailto:info@paratype.net">for your comments</a>. They will help us&nbsp;make the&nbsp;project better.</p>
+<p class="langinfo_next redtext"><br />Contributing </p>
+<p class="langinfo_next">If you want to correct or extend a language entry — fix a missing character, update a description, refine an alphabet — see the full instructions <a href="https://github.com/paratype-git/cyrillic-languages" target="top">in our GitHub repository</a>.</p>
+<p class="langinfo_next">The notes — how the pipeline is run, how to add a new language, how to maintain the sort order and Unicode description tables — are <a href="https://github.com/paratype-git/cyrillic-languages/blob/master/docs/MAINTAINING.md" target="top">here</a>.</p>
 <p class="langinfo">&nbsp;</p>
 `;
